@@ -1,0 +1,59 @@
+
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+        <!--=======Font Open Sans======-->
+        <link href='https://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css'>
+        <link rel="stylesheet" href="css/style.css">
+        <!--StyleSheet-->
+    </head>
+    <body>
+    <section>
+        <div class="content">
+            <div class="forms">
+                <ul class="tab-group">
+                    <li class="tab active"><a href="#login">Acesso</a></li>
+                    <li class="tab"><a href="#signup">Registrar</a></li>
+                </ul>
+                <form action="index.html" method="POST" id="login">
+                    <div class="input-field">
+                    <label for="email">E-mail</label>
+                    <input type="email" name="email" required="email" placeholder="ex: Edson@techteam.com" />
+                    <label for="password">Passe</label> 
+                    <input type="password" name="passe" required placeholder="ex: webdeveloper"/>
+                    <input type="submit" value="Acesso" class="button"/>
+                    </div>
+                </form>
+                <form action="#" id="signup">
+                    <div class="input-field">
+                    <label for="email">E-mail</label> 
+                    <input type="email" name="email" required="email" placeholder="ex: Edson@techteam.com"/>
+                    <label for="password">Passe</label> 
+                    <input type="password" name="passe" placeholder="ex: webdeveloper" required/>
+                    <label for="password">Confirma Passe</label> 
+                    <input type="password" name="passe" placeholder="ex: webdeveloper" required/>
+                    <input type="submit" value="Registro" class="button" />
+                    </div>
+                </form>
+            </div>
+        </div>
+    </section>
+    <script src='http://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js'></script>
+    <script type="text/javascript">
+    $(document).ready(function(){
+        $('.tab a').on('click', function (e) {
+        e.preventDefault();
+        
+        $(this).parent().addClass('active');
+        $(this).parent().siblings().removeClass('active');
+
+        var href = $(this).attr('href');
+        $('.forms > form').hide();
+        $(href).fadeIn(500);
+        });
+    });
+    </script>
+    </body>
+</html>
